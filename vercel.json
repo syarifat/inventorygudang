@@ -30,7 +30,7 @@
         "APP_ENV": "production",
         "APP_DEBUG": "true",
         "APP_URL": "",
-        "APP_KEY": "base64:/n2BUQzslx4+v/ITdyHJ/CgysAdD2ya/AFap/p0UDvA=",
+        "APP_KEY": "base64:LIoZ8bxciwNvf+/On/0YisHpCQOUln/+424X4w3WF5k=",
         "DB_CONNECTION": "mysql",
         "DB_HOST": "n3ad6k.h.filess.io",
         "DB_PORT": "3307",
