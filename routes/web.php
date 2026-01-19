@@ -32,7 +32,16 @@ use App\Models\BarangMasuk;
 |
 */
 
-Route::redirect('/', '/info');
+// Letakkan ini di bagian paling atas web.php (setelah use statements)
+Route::get('/', function () {
+    if (auth()->check()) {
+        // Jika sudah login, arahkan ke halaman dashboard asli
+        return redirect('/dashboard');
+    }
+    // Jika belum login (tamu), arahkan ke halaman info/landing page
+    return redirect('/info');
+});
+
 Route::get('/info', function () {
     return view('info');
 })->name('info');
@@ -55,7 +64,6 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['middleware' => 'checkRole:kepala gudang,superadmin,admin gudang'], function(){
         Route::resource('/dashboard', DashboardController::class);
-        Route::get('/', [DashboardController::class, 'index']);
         
         Route::get('/laporan-stok/get-data', [LaporanStokController::class, 'getData']);
         Route::get('/laporan-stok/print-stok', [LaporanStokController::class, 'printStok']);
