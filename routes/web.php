@@ -32,6 +32,10 @@ use App\Models\BarangMasuk;
 |
 */
 
+Route::redirect('/', '/info');
+Route::get('/info', function () {
+    return view('info');
+})->name('info');
 
 Route::middleware('auth')->group(function () {
 
