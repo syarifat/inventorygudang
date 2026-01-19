@@ -38,13 +38,13 @@ Route::get('/', function () {
         // Jika sudah login, arahkan ke halaman dashboard asli
         return redirect('/dashboard');
     }
-    // Jika belum login (tamu), arahkan ke halaman info/landing page
-    return redirect('/info');
+    // Jika belum login (tamu), arahkan ke halaman landing/landing page
+    return redirect('/landing');
 });
 
-Route::get('/info', function () {
-    return view('info');
-})->name('info');
+Route::get('/landing', function () {
+    return view('landing');
+})->name('landing');
 
 Route::middleware('auth')->group(function () {
 
